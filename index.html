@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+<link rel="stylesheet" href="css/style.css">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<!-- <script src="https://cdn.jsdelivr.net/npm/qrcodejs@1.0.0/qrcode.min.js"></script> -->
+</head>
+<body>
+
+
+
+<div class="music-control" id="musicToggle">🎵 Play Music</div>
+
+<div class="container">
+
+<div id="lockScreen">
+  <div class="lock-box">
+    <h1>💖 A Special Surprise 💖</h1>
+    <p>Enter the secret password</p>
+    <input type="password" id="passwordInput" placeholder="Password 💌">
+    <button onclick="unlock()">Unlock 🔓</button>
+    <p id="errorText"></p>
+  </div>
+</div>
+
+<!-- SCREEN 1 -->
+<div id="screen1">
+    <div class="sticker">
+    <img src="images\Brdy_cat.jpg" onerror="this.style.display='none'; this.parentElement.innerHTML='😻💕';">
+  </div>
+  <h1>🎉 Happy Birthday Sweet Heart 🎂</h1>
+  <p style="font-size: 20px; margin: 20px 0;">Today is your special day! ✨</p>
+  <button id="startBtn">Start 💖</button>
+</div>
+
+<!-- SCREEN - QR Code -->
+<!-- <div id="screenQR" class="hidden">
+  <div class="qr-section">
+    <h2>💖 Scan to Open 💖</h2>
+    <p>Share this QR code with your love!</p>
+    <div id="qrcode"></div>
+    <p class="qr-instructions">📱 Scan this code with your phone camera to open this birthday surprise!</p>
+    <button id="continueBtn" style="margin-top: 20px;">Continue 💕</button>
+  </div>
+</div> -->
+
+<!-- SCREEN 2 -->
+<div id="screen2" class="hidden">
+  <div class="sticker">
+    <img src="images\cute_cat.webp" onerror="this.style.display='none'; this.parentElement.innerHTML='😻💕';">
+  </div>
+  <h2>Do you love me? 💕</h2>
+  <p style="font-size: 18px; margin: 20px 0;">Be honest now... 😊</p>
+  <button id="yesBtn">Yes! 😘</button>
+  <button id="noBtn">No 🙄</button>
+</div>
+
+<!-- SCREEN 3 -->
+<div id="screen3" class="hidden">
+  <div class="sticker">
+    <img src="images\cat_with_gun.gif" onerror="this.style.display='none'; this.parentElement.innerHTML='😾🔫';">
+  </div>
+  <h2>😾 How Dare You?</h2>
+  <p style="font-size: 20px; margin: 20px 0;">Acha Ayesha ji theek hai! 😤</p>
+  <button id="yesBtn2">Okay Yes! 😅</button>
+  <button id="runNo">Still No 😏</button>
+</div>
+
+<!-- SCREEN 4 -->
+<div id="screen4" class="hidden">
+  <div class="sticker">
+    <img src="images\happy_cat.png" onerror="this.style.display='none'; this.parentElement.innerHTML='😻💖';">
+  </div>
+  <h1>💖 I knew you love me! 💖</h1>
+  <p style="font-size: 22px; margin: 20px 0;">Love you too 🥰</p>
+
+  <div class="gallery-wrapper">
+    <div class="gallery" id="gallery">
+      <div class="card">
+        <div class="card-content">
+          <img src="https://media1.tenor.com/m/uYCJQ7q_PkwAAAAd/love-heart.gif" onerror="this.style.display='none'; this.parentElement.innerHTML='❤️';">
+        </div>
+        <p>Our first memory</p>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="https://media1.tenor.com/m/gUiu1zyxfzYAAAAd/coding-cute.gif" onerror="this.style.display='none'; this.parentElement.innerHTML='😊';">
+        </div>
+        <p>You make me smile</p>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="https://media1.tenor.com/m/d8PPI3u9l5sAAAAd/love-hearts.gif" onerror="this.style.display='none'; this.parentElement.innerHTML='💑';">
+        </div>
+        <p>Forever together</p>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="https://media1.tenor.com/m/7zrbgq00aXgAAAAd/cute-love.gif" onerror="this.style.display='none'; this.parentElement.innerHTML='😍';">
+        </div>
+        <p>You melt my heart</p>
+      </div>
+      <div class="card">
+        <div class="card-content">
+          <img src="https://media1.tenor.com/m/WQAUswYc9dkAAAAd/love-you-bear.gif" onerror="this.style.display='none'; this.parentElement.innerHTML='💘';">
+        </div>
+        <p>Love you endlessly</p>
+      </div>
+    </div>
+  </div>
+  <button id="toCake">Cut the Cake 🎂</button>
+</div>
+
+<!-- SCREEN 5 -->
+<div id="screenCake" class="hidden">
+  <h1>🎂 Time to Cut the Cake! 🎉</h1>
+  <p style="font-size: 20px; margin: 20px 0;">Click the cake! 💖</p>
+  <div class="cake" id="cakeDiv">
+    <img src="https://media1.tenor.com/m/Y8YsQd_zF0EAAAAC/birthday-cake-happy-birthday.gif" onerror="this.style.display='none'; this.parentElement.innerHTML='🎂';">
+  </div>
+  <p id="cakeMessage" style="font-size: 24px; margin-top: 20px; font-weight: bold;"></p>
+  <button id="toLetter" class="hidden" style="margin-top: 20px;">Read My Letter 💌</button>
+</div>
+
+<!-- SCREEN 6 - Love Letter -->
+<div id="screenLetter" class="hidden">
+  <div class="love-letter">
+    <div class="letter-header">
+      <h1>💖 A Letter For You 💖</h1>
+      <p>From my heart to yours...</p>
+    </div>
+    
+    <div class="letter-content">
+      <p>Dear [Your Love's Name],</p>
+      
+      <p>Happy Birthday to the most amazing person in my life! On this special day, I want you to know how much you mean to me and how grateful I am to have you by my side.</p>
+      
+      <p>Every moment with you is a treasure, every smile you give me lights up my world, and every day with you is a gift I cherish. You make my life complete in ways I never knew were possible.</p>
+      
+      <p>I promise to always be there for you, to support your dreams, to share in your joys, and to stand by you through every challenge. You deserve all the happiness in the world, and I'll do everything I can to make you smile.</p>
+      
+      <p>Thank you for being you – for your kindness, your laughter, your love, and for choosing to share your life with me. Here's to many more birthdays together, creating beautiful memories and growing old side by side.</p>
+      
+      <p>I love you more than words can express! 💕</p>
+    </div>
+    
+    <div class="letter-signature">
+      <p>Forever yours,</p>
+      <p>[Your Name] ❤️</p>
+    </div>
+    
+    <div class="letter-footer">
+      <div class="emoji-hearts">💕 💖 💗 💝 💘</div>
+      <button id="finalBtn" style="margin-top: 30px;">Thank You 💖</button>
+    </div>
+  </div>
+</div>
+
+<!-- SCREEN 7 - The End -->
+<div id="screenEnd" class="hidden">
+  <div class="sticker">
+    <img src="images\happy_cat.png" onerror="this.style.display='none'; this.parentElement.innerHTML='😻💖';">
+  </div>
+  <h1>Thank You For Everything! 💕</h1>
+  <p style="font-size: 24px; margin: 30px 0;">I won't forget some memories. ✨</p>
+  <p style="font-size: 20px; margin: 20px 0;">Happy Birthday Once Again! 🎂🎉</p>
+  <div style="font-size: 60px; margin: 30px 0;">💖 💕 💗 💝 💘 💖</div>
+</div>
+
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
